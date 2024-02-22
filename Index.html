@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Productos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <title>Navegación</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    main{
+        margin: 0 150px;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      color: white;
+      padding: 24px; 
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-right: 20px;
+    }
+
+    nav ul li:last-child {
+      margin-right: 0;
+    }
+
+    .product-card {
+      width: calc(33.33% - 20px);
+      margin-right: 20px;
+      margin-bottom: 50px;
+      float: left;
+      background-color: #f5f5f5;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .product-card h2 {
+      margin-top: 20px;
+      margin-left: 20px;
+      font-size: 18px;
+    }
+
+    .navigation-buttons a {
+      display: inline-flex;
+      margin: 20px;
+      font-size: 24px;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .navigation-buttons {
+      margin-left: 43%;
+      margin-top: 50px;
+      margin-bottom: 100px;
+    }
+
+    .pagination button:hover {
+      background-color: #555;
+    }
+    
+  </style>
+</head>
+<body>
+  <header>
+      <h1>Catálogo de Productos</h1>
+      <nav>
+          <button type="button" onclick="navigateToCategory('electronic')" aria-label="Electrónica">
+              <a href="imprimir.html"> 
+                  <img src="./images/icon-electronic.png" width="40" alt="Icono de Electrónica">
+               </a>
+            </button>
+            <button type="button" onclick="navigateToCategory('fashion')" aria-label="Moda">
+              <a href="imprimir.html"> 
+                  <img src="./images/icon-fashion.png" width="40" alt="Icono de Moda">
+               </a>
+            </button>
+            <button type="button" onclick="navigateToCategory('home')" aria-label="Hogar">
+              <a href="imprimir.html"> 
+                  <img src="./images/icon-home.png" width="40" alt="Icono de Hogar">
+               </a>
+            </button>
+      </nav>
+  </header>
+  <main>
+      <div>
+          <div>
+              <h2 id="electronic-heading">Electrónica</h2>
+              <div class="product-card">
+                  <img src="./images/smartphone.jpg" alt="Teléfono inteligente">
+                  <div class="product-info">
+                      <h2>Teléfono inteligente</h2>
+                  </div>
+              </div>
+              <div class="product-card">
+                  <img src="./images/gopro.jpg" alt="GoPro">
+                  <div class="product-info">
+                      <h2>GoPro</h2>
+                  </div>
+              </div>
+              <div class="product-card">
+                  <img src="./images/smartwatch.jpg" alt="Smartwatch">
+                  <div class="product-info">
+                      <h2>Smartwatch</h2>
+                  </div>
+              </div>
+          </div> 
+          <div class="navigation-buttons">
+              <a href="#" onclick="irAtras()" aria-label="Ir Atrás"><i class="material-icons">arrow_back</i></a>
+              <a href="#" onclick="irAdelante()" aria-label="Ir Adelante"><i class="material-icons">arrow_forward</i></a>
+          </div>
+      </div> 
+
+      <div>
+          <div>
+              <h2 id="fashion-heading">Moda</h2>
+              <div class="product-card">
+                  <img src="./images/camiseta.jpg" alt="Camiseta">
+                  <div class="product-info">
+                      <h2>Camiseta</h2>
+                  </div>
+              </div>
+              <div class="product-card">
+                  <img src="./images/abrigo.jpg" alt="Abrigo">
+                  <div class="product-info">
+                      <h2>Abrigo</h2>
+                  </div>
+              </div>
+              <div class="product-card">
+                  <img src="./images/calcetines.jpg" alt="Calcetines">
+                  <div class="product-info">
+                      <h2>Calcetines</h2>
+                  </div>
+              </div>
+          </div> 
+          <div class="navigation-buttons">
+              <a href="#" onclick="irAtras()" aria-label="Ir Atrás"><i class="material-icons">arrow_back</i></a>
+              <a href="#" onclick="irAdelante()" aria-label="Ir Adelante"><i class="material-icons">arrow_forward</i></a>
+          </div>
+      </div> 
+
+      <div>
+          <div>
+              <h2 id="home-heading">Hogar</h2>
+              <div class="product-card">
+                  <img src="./images/mesa_comedor.jpg" alt="Mesa comedor">
+                  <div class="product-info">
+                      <h2>Mesa comedor</h2>
+                  </div>
+              </div>
+              <div class="product-card">
+                  <img src="./images/lampara.jpg" alt="Lámpara">
+                  <div class="product-info">
+                      <h2>Lámpara</h2>
+                  </div>
+              </div>
+              <div class="product-card">
+                  <img src="./images/silla_comedor.jpg" alt="Silla comedor">
+                  <div class="product-info">
+                      <h2>Silla comedor</h2>
+                  </div>
+              </div>
+          </div> 
+          <div class="navigation-buttons">
+              <a href="#" onclick="irAtras()" aria-label="Ir Atrás"><i class="material-icons">arrow_back</i></a>
+              <a href="#" onclick="irAdelante()" aria-label="Ir Adelante"><i class="material-icons">arrow_forward</i></a>
+          </div>
+      </div> 
+  </main>
+</body>
+</html>
